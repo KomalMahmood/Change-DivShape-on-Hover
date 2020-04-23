@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shape</title>
+	<link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+	<style>
+	*
+	{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}	
+    body
+    {
+    	background-color: black;
+    }
+    .container
+    {
+    	position: absolute;
+    	width: 350px;
+    	height: 330px;
+    	background:transparent;
+    	top:175px;
+    	left:35%;
+       
+    }
+    .shape
+    {
+         position: absolute;
+    	width: 350px;
+    	height: 350px;
+    	background:white;
+    	top:-18px;
+    	right:-9px;
+    	border-radius:50%;
+    	border:20px solid cyan;
+    	padding:82px 16px;
+    	transform:rotate(45deg);
+    	
+    	transition:all 0.5s ease;
+    	
+
+    }
+    .shape p
+    {
+    	transform:rotate(-45deg);
+    	font-size: 15px;
+    	font-family: 'Acme', sans-serif;
+    }
+     
+   /* method 1: with .left and .right divs */
+
+   .left
+     {
+     	position: relative;
+     	width:24px;
+        height: 280px;
+        background-color: crimson;
+        z-index: -1;
+        top:15px;
+     	left:-0%;
+     	float: left;
+     	transition:all 0.8s ease-in;
+     	opacity: 0;
+     }
+     .right
+     {
+     	position: relative;
+     	width:24px;
+        height: 280px;
+        background-color: crimson;
+        z-index: -1;
+        top:15px;
+     	right:-0%;
+     	float: right;
+     	transition:all 0.8s ease-in;
+     	opacity: 0;
+     }
+     
+     
+
+
+     /*
+     Method 2: with :before and :after
+     .container:before
+     {
+        content: '';
+        position: absolute;
+        //left:-34px;
+        left: 34px;
+        top:15px;
+     	width:24px;
+        height: 280px;
+        background-color: crimson;
+        z-index: -1;
+     	transition:all 0.3s ease-in;
+     	opacity: 0;
+
+     }
+     .container:after
+     {
+        content: '';
+        position: absolute;
+        //right:-34px;
+        right:34px;
+        top:15px;
+     	width:24px;
+        height: 280px;
+        background-color: crimson;
+        z-index: -1;
+     	transition:all 0.3s ease-in;
+     	opacity: 0;
+
+     }
+     .container:hover:before
+     {
+     	left:-34px;
+     	opacity: 0.7;
+     }
+     .container:hover:after
+     {
+
+        right:-34px;
+     	opacity: 0.7;
+     }
+     */
+     
+     .container:hover 
+     {
+     	background-color: white;
+     	border:10px solid cyan;
+     }
+     .container:hover .shape
+     {
+     	border-radius: 0;
+     }
+     .container:hover .left
+     {
+     	left:-10%;
+     	opacity: 0.7;
+     }
+     .container:hover .right
+     {
+     	right:-10%;
+     	opacity: 0.7;
+     }
+     
+	</style>
+</head>
+<body>
+
+<div class="container">
+ <div class="left"></div> 	
+<div class="shape">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</div>
+ <div class="right"></div> 
+</div>
+
+</body>
+</html>
